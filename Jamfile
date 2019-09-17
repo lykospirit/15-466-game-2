@@ -65,7 +65,7 @@ if $(OS) = NT { #Windows
 	LINK = clang++ ;
 	LINKFLAGS = -std=c++14 -g -Wall -Werror ;
 	LINKLIBS = ;
-	
+
 	#SDL2:
 	C++FLAGS += `'$(NEST_LIBS)/SDL2/bin/sdl2-config' --prefix='$(NEST_LIBS)/SDL2' --cflags` ;
 	LINKLIBS += `'$(NEST_LIBS)/SDL2/bin/sdl2-config' --prefix='$(NEST_LIBS)/SDL2' --static-libs` -framework OpenGL ;
@@ -109,7 +109,7 @@ if $(OS) = NT { #Windows
 	LINK = g++ -no-pie ;
 	LINKFLAGS = -std=c++17 -g -Wall -Werror ;
 	LINKLIBS = ;
-	
+
 	#various nest libs, split into their own lines for ease of commenting-out-when-not-needed:
 
 	#SDL2:
@@ -157,8 +157,8 @@ GAME_NAMES =
 	Sound
 	load_wav
 	load_opus
+    Puzzles
 	DrawSprites
-	MenuMode
 	StoryMode
 	Sprite
 	data_path
@@ -179,7 +179,7 @@ LOCATE_TARGET = objs ; #put objects in 'objs' directory
 Objects $(GAME_NAMES:S=.cpp) $(PACK_SPRITES_NAMES:S=.cpp) ;
 
 LOCATE_TARGET = dist ; #put main in 'dist' directory
-MainFromObjects the-planet : $(GAME_NAMES:S=$(SUFOBJ)) ;
+MainFromObjects notes : $(GAME_NAMES:S=$(SUFOBJ)) ;
 
 LOCATE_TARGET = sprites ; #put pack-sprites utility in the 'sprites' directory:
 MainFromObjects pack-sprites : $(PACK_SPRITES_NAMES:S=$(SUFOBJ)) load_save_png$(SUFOBJ) ;

@@ -10,6 +10,9 @@ dist/the-planet
 dist/the-planet.exe
 dist/the-planet.ilk
 dist/the-planet.pdb
+dist/notes.exe
+dist/notes.ilk
+dist/notes.pdb
 sprites/pack-sprites
 sprites/pack-sprites.exe
 sprites/pack-sprites.ilk
